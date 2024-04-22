@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Обмен</h3>
+    {% if message %}
+        {% if alert %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+    {% endif %}
+    <div class="box">
+        <form method="POST" action="/team">
+            <div class="form-group">
+                <input name="code" placeholder="Код команды, с которой производится обмен." autofocus="" class="form-control" type='number'>
+            </div>
+
+            <div class="form-group">
+                <label for="controlselect">Ресурс для обмена</label>
+                <select class="form-control" id="controlselect" name='res'>
+                    <option selected>(fish) Рыба 🐟</option>
+                    <option>(wood) Дерево 🌲</option>
+                    <option>(oil) Нефть 🩸</option>
+                    <option>(ice) Мороженое 🍨</option>
+                    <option>(micro) Микро-процессоры 👾</option>
+                    <option>(jew) Драгоценности 💎</option>
+                </select>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <select name="destination" class="form-control">
+                    <option selected>(1) Команда покупает ресурс</option>
+                    <option>(2) Команда продает ресурс</option>
+                </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <input name="amount" placeholder="Количество ресурса" class="form-control" type='number'>
+                </div>
+            </div>
+            <button class="btn btn-primary">Совершить обмен</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

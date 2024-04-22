@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>{{ text }}</h3>
+    <table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Место</th>
+        <th scope="col">Название команды</th>
+        <th scope="col">Мур-рублики</th>
+        <th scope="col">Суммарное кол-во ресурсов (в зачет не идет)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in range(teams|length) %}
+    <tr>
+        <td>{{ i+1 }}</td>
+        <td>{{ teams[i]['name'] }}</td>
+        <td>{{ teams[i]['money'] }}</td>
+        <td>{{ teams[i]['diff'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

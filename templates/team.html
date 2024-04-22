@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ res['name'] }}</h1>
+<div class="alert alert-danger" role="alert">
+    Код вашей команды: {{ code }}. Сообщайте его только организаторам на точках обмена.
+</div>
+<h3>Ресурсы: </h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Экономический ресурс</th>
+        <th scope="col">Количество в ун. ед.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Мур-рублики 🪙</td>
+        <td>{{ res['resources']['money'] }}</td>
+    </tr>
+    <tr>
+        <td>Рыба 🐟</td>
+        <td>{{ res['resources']['fish'] }}</td>
+    </tr>
+    <tr>
+        <td>Дерево 🌲</td>
+        <td>{{ res['resources']['wood'] }}</td>
+    </tr>
+    <tr>
+        <td>Нефть 🩸</td>
+        <td>{{ res['resources']['oil'] }}</td>
+    </tr>
+    <tr>
+        <td>Мороженое 🍨</td>
+        <td>{{ res['resources']['ice'] }}</td>
+    </tr>
+    <tr>
+        <td>Микро-процессоры 👾</td>
+        <td>{{ res['resources']['micro'] }}</td>
+    </tr>
+    <tr>
+        <td>Драгоценности 💎</td>
+        <td>{{ res['resources']['jew'] }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock %}
